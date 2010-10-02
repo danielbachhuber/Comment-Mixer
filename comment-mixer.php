@@ -38,6 +38,9 @@ class comment_mixer {
 		// Save the options to our object
 		$this->options = get_option( $this->options_name );
 		
+		if ( is_admin() ) {
+			add_action( 'admin_menu', array(&$this, 'add_admin_menu_items') );
+		}
 		
 	}
 	
@@ -45,6 +48,7 @@ class comment_mixer {
 	 * @todo admin initialization
 	 */
 	function admin_init() {
+		
 		
 	}
 	
