@@ -58,7 +58,7 @@ class comment_mixer_settings
 				<form action="options.php" method="post">
 
 				<?php settings_fields( $comment_mixer->options_group ); ?>
-				<?php do_settings_sections( $comment_mixer->settings_page ); ?>
+				<?php do_settings_sections( $comment_mixer->top_level_page ); ?>
 
 				<p class="submit"><input name="submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>" /></p>
 
