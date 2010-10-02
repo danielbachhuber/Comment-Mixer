@@ -8,10 +8,10 @@ if ( !class_exists( 'comment_mixer_taxonomies' ) ){
 class comment_mixer_taxonomies
   {
 	
-	var $taxonomy_label = 'comment_mixer';
+    //public $taxonomy_label;
   
     function __construct() {
-      
+      $this->taxonomy_label  = "comment_mixer_tax";
     }
 
 	/**
@@ -34,6 +34,7 @@ class comment_mixer_taxonomies
 							'show_tagcloud' => false,
 							'rewrite' => false
 						);
+			//print_r(gettype($this->taxonomy_label));
 			register_taxonomy( $this->taxonomy_label, 'comment', $args );
 			
 		}

@@ -32,13 +32,13 @@ class comment_mixer {
 	function init() {
 		
 		// Initialize all of our classes
-		$this->settings = new comment_mixer_settings();
-		$this->taxonomies = new comment_mixer_taxonomies();
+	  		$this->settings = new comment_mixer_settings();
+	  $this->taxonomies = new comment_mixer_taxonomies();
 
-		$this->taxonomies->init();
+	  $this->taxonomies->init();
 
 		// Save the options to our object
-		$this->options = get_option( $this->options_name );
+			$this->options = get_option( $this->options_name );
 		
 		if ( is_admin() ) {
 			add_action( 'admin_menu', array(&$this, 'add_admin_menu_items') );
@@ -91,6 +91,7 @@ class comment_mixer {
 		$this->taxonomies->activate_once();
 				
 	}
+
 	
 } // END: class comment_mixer
 
