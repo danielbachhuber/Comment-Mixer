@@ -39,6 +39,14 @@ class comment_mixer_taxonomies
 		}
 		
 	}
+	
+	/**
+	 * Default settings to insert when the plugin is activated for the first time
+	 * @todo Establish the settings
+	 */
+	function activate_once() {
+		
+	}
 
 }
 

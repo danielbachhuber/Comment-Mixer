@@ -74,6 +74,14 @@ class comment_mixer_settings
 	function validate_settings() {
 		
 	}
+	
+	/**
+	 * Default settings to insert when the plugin is activated for the first time
+	 * @todo Establish the settings
+	 */
+	function activate_once() {
+		
+	}
 
 } // END: comment_mixer_settings
 

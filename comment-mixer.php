@@ -85,7 +85,11 @@ class comment_mixer {
 	 * @todo Initial settings on install
 	 */ 
 	function activate_plugin() {
-	
+		
+		// Install settings for these objects on activation
+		$this->settings->activate_once();	
+		$this->taxonomies->activate_once();
+				
 	}
 	
 } // END: class comment_mixer
