@@ -22,5 +22,7 @@ class comment_mixer_taxonomies
 
 }
 
+}
+
 
 ?>
