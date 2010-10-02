@@ -33,7 +33,7 @@ class comment_mixer_settings
 	function enable_option() {
 		global $comment_mixer;
 		
-		echo '<select id="enabled" name="' . $this->options_name . '[enabled]">';
+		echo '<select id="enabled" name="' . $comment_mixer->options_name . '[enabled]">';
 		echo '<option value="0">Disabled</option>';
 		echo '<option value="1"';
 		if ( $options['enabled'] == 1 ) { echo ' selected="selected"'; }
@@ -43,6 +43,7 @@ class comment_mixer_settings
 	}
 	
 	function settings_page() {
+		global $comment_mixer;
 
 		?>                                   
 		<div class="wrap">
@@ -52,8 +53,8 @@ class comment_mixer_settings
 
 				<form action="options.php" method="post">
 
-				<?php settings_fields( $this->options_group ); ?>
-				<?php do_settings_sections( $this->settings_page ); ?>
+				<?php settings_fields( $comment_mixer->options_group ); ?>
+				<?php do_settings_sections( $comment_mixer->settings_page ); ?>
 
 				<p class="submit"><input name="submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>" /></p>
 
