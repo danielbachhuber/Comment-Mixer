@@ -33,7 +33,9 @@ class comment_mixer {
 		
 		// Initialize all of our classes
 		$this->settings = new comment_mixer_settings();
-		$this->taxonomies = new comment_mixer_settings();
+		$this->taxonomies = new comment_mixer_taxonomies();
+
+		$this->taxonomies->init();
 
 		// Save the options to our object
 		$this->options = get_option( $this->options_name );
@@ -49,6 +51,7 @@ class comment_mixer {
 	 */
 	function admin_init() {
 		
+		$this->settings->init();
 		
 	}
 	
@@ -71,8 +74,9 @@ class comment_mixer {
 						'manage_options', $this->top_level_page, 
 						array(&$this->settings, 'settings_page'));
 		
-		// @todo Add taxonomy page				
-		//add_submenu_page( '' );
+		// Taxonomy page			
+		add_submenu_page( $this->top_level_page, 'Comment Types',
+							'Comment Types', 'manage_options', 'edit-tags.php?taxonomy='.$this->taxonomies->taxonomy_label);
 		
 	}
 	

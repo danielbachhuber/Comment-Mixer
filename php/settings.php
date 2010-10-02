@@ -27,6 +27,10 @@ class comment_mixer_settings
 		
 	}
 	
+	function general_setting_section() {
+		
+	}
+	
 	/**
 	 * Option: Enable or disable Comment Mixer
 	 */ 
